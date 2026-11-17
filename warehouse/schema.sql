@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS dw_bawang_putih_test;
+USE dw_bawang_putih_test;
+CREATE TABLE IF NOT EXISTS Dim_Waktu (WaktuKey INT PRIMARY KEY, Tanggal DATE UNIQUE NOT NULL, Hari INT, Bulan INT, NamaBulan VARCHAR(20), Kuartal INT, Tahun INT);
+CREATE TABLE IF NOT EXISTS Dim_Wilayah (WilayahKey INT AUTO_INCREMENT PRIMARY KEY, NamaKabupaten VARCHAR(100) UNIQUE NOT NULL, Provinsi VARCHAR(50) DEFAULT 'Jawa Tengah');
+CREATE TABLE IF NOT EXISTS Fact_Harga (WaktuKey INT, WilayahKey INT, Harga INT NOT NULL, PRIMARY KEY(WaktuKey,WilayahKey), FOREIGN KEY(WaktuKey) REFERENCES Dim_Waktu(WaktuKey), FOREIGN KEY(WilayahKey) REFERENCES Dim_Wilayah(WilayahKey));
+CREATE TABLE IF NOT EXISTS Fact_JISDOR (WaktuKey INT PRIMARY KEY, Kurs INT NOT NULL, FOREIGN KEY(WaktuKey) REFERENCES Dim_Waktu(WaktuKey));

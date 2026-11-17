@@ -1,0 +1,13 @@
+{
+  "default_year": 2021,
+  "default_wilayah": [],
+  "visibility": {
+    "kpi": true,
+    "peta": true,
+    "tren": true,
+    "perbandingan": true,
+    "kmeans": true,
+    "insight": true,
+    "jisdor": true
+  }
+}

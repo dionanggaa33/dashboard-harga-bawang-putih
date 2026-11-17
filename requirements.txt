@@ -1,0 +1,10 @@
+# Versi dipin pada kombinasi yang sudah terbukti berjalan di lokal (Python 3.12/3.14).
+# Pin mencegah build Streamlit Cloud gagal akibat rilis baru yang tidak kompatibel.
+pandas==3.0.5
+numpy==2.5.2
+openpyxl==3.1.5
+sqlalchemy==2.0.54
+pymysql==1.2.3
+scikit-learn==1.9.1
+streamlit==1.64.0
+plotly==7.1.0
